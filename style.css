@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  background: hsla(351, 100%, 25%, 1);
+   background-attachment:fixed;
+  background-size:contain;
+  background: linear-gradient(
+    90deg,
+    hsla(351, 100%, 25%, 1) 0%,
+    hsla(9, 59%, 7%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(351, 100%, 25%, 1) 0%,
+    hsla(9, 59%, 7%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(351, 100%, 25%, 1) 0%,
+    hsla(9, 59%, 7%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7f0012", endColorstr="#1b0a07", GradientType=1 );
+}
+.signature{
+  text-align: center;
+  margin: 1rem;
+  font-family: "outfit" ,sans-serif;
+  font-weight: bolder;
+  font-size: 3rem;
+  color: #BBBBBF;
+  opacity: 0.1;
+}
+.signature a{
+  text-decoration: none;
+  color: #BBBBBF;
+  opacity: 1;
+}
+.signature a:hover{
+  color: white;
+  text-decoration:dotted;
+  opacity: 10;
+}
+@font-face {
+  font-family: 'my-fonts';
+  src: url(/calculator/digital-7.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.outer-body {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+  width: 90%; 
+  max-width: 400px; 
+  height: 90vh;
+  max-height: 40rem; 
+    padding: 1rem;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.screen {
+    background: rgba(255, 255, 255, 0.1);
+    /* font-family: 'Alfa Slab One' ,sans-serif;
+     */
+     font-family: 'my-fonts',sans-serif;
+    /* background-color: #272626; */
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+    height: 10rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+  .keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;   
+    
+  }
+  .btn:nth-child(4){
+    grid-row: span 2;
+    /* color: yellow; */
+    font-size: 1.5rem;
+  }
+  .btn:nth-child(11){
+    grid-row: span 2;    
+    font-size: 1.5rem;
+  }
+  
+  .keypad button {
+    padding: 1rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: #000;
+    box-shadow: 0 2px 6px rgba(12, 11, 11, 0.1);
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-family: 'Alfa Slab One' ,sans-serif;
+    word-break: break-word;
+  } 
+  
+  .keypad button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  @media (max-width: 600px) {
+    body{
+      padding: 0.8rem;
+    }
+    .outer-body {
+      width: 95%;
+      height: 90vh;
+      padding: 0.8rem;
+    }
+  
+    .screen {
+      font-size: 1.2rem;
+      padding: 0.8rem;
+    }
+  
+    .keypad button {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .outer-body {
+      /* 🔁 Allow height to grow naturally */
+      height: auto;
+      max-height: none;
+    }
+  
+    .keypad {
+      /* 🔁 Smaller spacing for buttons */
+      gap: 0.6rem;
+    }
+  
+    .keypad button {
+      /* 🔁 Slightly smaller font and padding */
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+  }
+  
+  /* 📱📱 Phone breakpoint */
+  @media (max-width: 480px) {
+    .keypad {
+      /* 🔁 Keep 4 columns but reduce spacing */
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+  
+    .keypad button {
+      /* 🔁 Even smaller buttons for small screens */
+      font-size: 0.9rem;
+      padding: 0.6rem;
+    }
+  
+    .screen {
+      /* 🔁 Shrink display screen font */
+      font-size: 1.2rem;
+      padding: 0.8rem;
+    }
+  }
